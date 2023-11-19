@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Profile = (props) => {
   return (
-    <div class="profile">
+    <div className="profile">
       <div className="description">
         <img src={props.avatar} alt="User avatar" className="avatar" />
         <p className="name">{props.username}</p>
