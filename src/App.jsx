@@ -5,6 +5,10 @@ import Profile from "./components/Profile";
 import Statistics from "./components/Statistics";
 import user from "../api/user.json";
 import data from "../api/data.json";
+import friends from "../api/friends.json";
+import FriendList from "./components/FriendList";
+import TransactionHistory from "./components/TransactionHistory";
+import transactions from "../api/transactions.json";
 
 const App = () => {
   return (
@@ -18,6 +22,8 @@ const App = () => {
       />
       <Statistics title="Upload stats" stats={data} />
       <Statistics stats={data} />
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
     </>
   );
 };
