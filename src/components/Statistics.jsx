@@ -45,7 +45,7 @@ const Statistics = ({ title, stats }) => {
   ];
   return (
     <StatisticsContainer>
-      <Title>{title}</Title>
+      {title&&<Title>{title}</Title>}
       <StatList>
         {stats.map((stat, index) => {
           const backgroundColor =
