@@ -1,27 +1,43 @@
-import React from "react";
+import styled from "styled-components";
+
+const StyledTable = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #bbb9b9;
+`;
+
+const StyledTh = styled.th`
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: left;
+`;
+
+const StyledTd = styled.td`
+  border: 1px solid #ddd;
+  padding: 10px;
+`;
 
 const TransactionHistory = ({ items }) => {
   return (
-    <table className="transaction-history">
+    <StyledTable className="transaction-history">
       <thead>
         <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
+          <StyledTh>Type</StyledTh>
+          <StyledTh>Amount</StyledTh>
+          <StyledTh>Currency</StyledTh>
         </tr>
       </thead>
-      {items.map((item) => {
-        return (
-          <tbody key={item.id}>
-            <tr>
-              <td>{item.type}</td>
-              <td>{item.amount}</td>
-              <td>{item.currency}</td>
-            </tr>
-          </tbody>
-        );
-      })}
-    </table>
+      <tbody>
+        {items.map((item) => (
+          <tr key={item.id}>
+            <StyledTd>{item.type}</StyledTd>
+            <StyledTd>{item.amount}</StyledTd>
+            <StyledTd>{item.currency}</StyledTd>
+          </tr>
+        ))}
+      </tbody>
+    </StyledTable>
   );
 };
 
